@@ -389,7 +389,8 @@ console.log(capitalizarPalabras('Esto es un título'))
 
   for (let i = 0; i < array.length; i++) {
     if (array[i] === array[i + 1] && array[i] === array[i + 2]) {
-      return resultado = true;
+      resultado = true
+      return resultado
     } else {
       resultado = false;
     }
@@ -397,6 +398,7 @@ console.log(capitalizarPalabras('Esto es un título'))
 
   return resultado;
 };
+
 
 console.log(tieneBloque([1, 2, 3]));
 //false
