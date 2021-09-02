@@ -381,3 +381,30 @@ console.log(capitalizarPalabras('Esto es un título'))
 //37 //(4 + 3 + 10 + 20 = 37)
  console.log(sumarSeccion([2, 2, 4, 3, 10, 20, 5], 4, 1))
 //10*/
+
+//11Definí una función tieneBloque que tome por parámetro un array array y devuelva si dicho array tiene un bloque de 3 o más ítems consecutivos idénticos.
+
+/*const tieneBloque = (array) => {
+  let resultado = false;
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === array[i + 1] && array[i] === array[i + 2]) {
+      return resultado = true;
+    } else {
+      resultado = false;
+    }
+  }
+
+  return resultado;
+};
+
+console.log(tieneBloque([1, 2, 3]));
+//false
+console.log(tieneBloque([1, 1, 1, 2, 3]));
+//true
+console.log(tieneBloque([1, 2, 3, 3, 3]));
+//true
+console.log(tieneBloque([1, 2, 3, 3, 3, 8]));
+//true
+console.log(tieneBloque([1, 2, 2, 3, 3, 4]));
+//false*/
