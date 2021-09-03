@@ -410,3 +410,33 @@ console.log(tieneBloque([1, 2, 3, 3, 3, 8]));
 //true
 console.log(tieneBloque([1, 2, 2, 3, 3, 4]));
 //false*/
+
+//10 Definí una función comer que reciba como argumento un string que consista en plantas, un conejo y una señal de prohibido. El conejo se come todas las plantas que hay a su derecha, hasta que se encuentra con la señal de prohibido. El programa debe mostrar las plantas sobrevivientes, que son todas las que están a la izquierda del conejo (si hay) y a la derecha de la señal (si hay). Ejemplo:
+
+// funciona si cambiamos a letras.
+/*const comer = (str) => {
+    
+  let posiciones = []
+  let arrayCortado = []
+
+  for (let i = 0; i < str.length; i++) {
+      if(str[i] === "🐰"){posiciones.push(i)
+      }
+      if(str[i] === "🚫"){posiciones.push(i)}
+  }
+
+  arrayCortado.push(str.slice(0,posiciones[0]))
+  arrayCortado.push(str.slice(posiciones[1]+1, str.length))
+
+
+  return arrayCortado.join("")
+}
+
+console.log(comer('🐰🥕🥬🥕🚫'))
+''
+ comer('🥕🥬🐰🥕🥕🥕🚫')
+'🥕🥬'
+ comer('🐰🥕🥬🥕🚫🥕') 
+'🥕'
+ comer('🌱🥕🌱🐰🌱🥬🌱🌱🚫🌷')
+'🌱🥕🌱🌷'*/
