@@ -134,6 +134,67 @@ console.log(estanJuntos(['Sam', 'Orco', 'Frodo']))
 
 console.log(separar("pgpggpp"));*/
 
+/*8 Definí una función obtenerChatStatus que reciba como argumento un array de strings usuarias y devuelva un string con el status del chat. Las reglas son:
+
+Para una usuaria, debe mostrar: NOMBRE_USUARIA_1 está conectada
+Para dos usuarias, debe mostrar: NOMBRE_USUARIA_1 y NOMBRE_USUARIA_2 + están conectadas
+Para más de dos usuarias, debe mostrar: NOMBRE_USUARIA_1, NOMBRE_USUARIA_2 y X persona(s) más están conectadas*/
+
+/*const obtenerChatStatus = (usuarias) => {
+
+  for (let i = 0; i < usuarias.length; i++) {
+    if(usuarias.length === 1){
+      return usuarias[0] + " está conectada"
+    }
+
+    if(usuarias.length === 2){
+      return usuarias[0] + " y " + usuarias[1] + " están conectadas"
+    }
+
+    else if(usuarias.length > 2){
+      return usuarias[0] + ", " + usuarias[1] + " y " + (usuarias.length - 2) + " persona(s) más están conectadas" 
+    }
+    
+  }
+}
+
+ console.log(obtenerChatStatus(['Ada']))
+//'Ada está conectada'
+ console.log(obtenerChatStatus(['Ada', 'Grace']))
+//'Ada y Grace están conectadas'
+ console.log(obtenerChatStatus(['Ada', 'Grace', 'Marie']))
+//'Ada, Grace y 1 persona(s) más están conectadas'*/
+
+//10 Definí una función comer que reciba como argumento un string que consista en plantas, un conejo y una señal de prohibido. El conejo se come todas las plantas que hay a su derecha, hasta que se encuentra con la señal de prohibido. El programa debe mostrar las plantas sobrevivientes, que son todas las que están a la izquierda del conejo (si hay) y a la derecha de la señal (si hay). Ejemplo:
+
+// funciona si cambiamos a letras.
+/*const comer = (str) => {
+    
+  let posiciones = []
+  let arrayCortado = []
+
+  for (let i = 0; i < str.length; i++) {
+      if(str[i] === "C"){posiciones.push(i)
+      }
+      if(str[i] === "P"){posiciones.push(i)}
+  }
+
+  arrayCortado.push(str.slice(0,posiciones[0]))
+  arrayCortado.push(str.slice(posiciones[1]+1, str.length))
+
+
+  return arrayCortado.join("")
+}
+
+console.log(comer('CZZZP'))
+''
+ comer('ZZCZZZP')
+'ZZ'
+ comer('CZZZPZ') 
+'Z'
+ comer('ZZZCZZZZPZ')
+'ZZZZ'*/
+
 //11 Definí una función multiplicar que reciba como argumentos un número multiplicador y un array de números numeros, y que devuelva un array donde cada elemento es el resultado del elemento del primer array (en la misma posición) multiplicado por el número ingresado. Ejemplo:
 
 /*const multiplicar = (multiplicador, numeros) => {
@@ -315,6 +376,27 @@ console.log(obtenerIndice(83, [5, 7, 12, 34, 54, 2, 12]));
  console.log(sumarImparesHasta(47))
 //576*/
 
+//4 Definí una función crearCuentaRegresiva que reciba como argumento un número entero numeroInicial y que devuelva un array con cuyo primer ítem sea numeroInicial y los demás ítems sean números enteros sucesivos descendientes, hasta llegar a 0.
+
+/*const crearCuentaRegresiva = (numeroInicial) =>{
+
+  let arrayDescendiente = []
+
+  for (let i = 0; i <= numeroInicial; i++) {
+
+    arrayDescendiente.unshift(i) 
+  }
+
+  return arrayDescendiente
+
+}
+
+
+ console.log(crearCuentaRegresiva(3))
+//[3, 2, 1, 0]
+ console.log(crearCuentaRegresiva(5))
+//[5, 4, 3, 2, 1, 0]*/
+
 //5 Definí una función invertir que tome por parámetro un array array y que devuelva un array con los mismos valores pero en orden invertido.
 
 /*const invertir = (array) => {
@@ -426,7 +508,37 @@ console.log(capitalizarPalabras('Esto es un título'))
  console.log(sumarSeccion([2, 2, 4, 3, 10, 20, 5], 4, 1))
 //10*/
 
-//11Definí una función tieneBloque que tome por parámetro un array array y devuelva si dicho array tiene un bloque de 3 o más ítems consecutivos idénticos.
+//10 Definí una función esSubconjunto que tome por parámetro dos arrays, subconjunto y conjunto, y devuelva si subconjunto es realmente subconjunto de conjunto, es decir, si todos los valores de subconjunto están en conjunto.
+/*const esSubconjunto = (subconjunto, conjunto) => {
+
+  let resultado = false  
+   for (let i = 0; i < subconjunto.length; i++) {
+     
+    if(conjunto.includes(subconjunto[i])){
+      resultado = true
+    }
+     
+     else{
+      resultado = false
+    }
+    
+   }
+  return resultado
+
+  
+}
+ console.log(esSubconjunto([1], [1, 2, 3]))
+//true
+ console.log(esSubconjunto([1, 2, 3], [1, 2, 3, 4, 5]))
+//true
+ console.log(esSubconjunto([27, 49, 54], [54, 27, 8, 27, 49]))
+//true
+ console.log(esSubconjunto([1, 2, 3], [1, 2]))
+//false
+ console.log(esSubconjunto([1], [2, 3, 4]))
+//false*/
+
+//11 Definí una función tieneBloque que tome por parámetro un array array y devuelva si dicho array tiene un bloque de 3 o más ítems consecutivos idénticos.
 
 /*const tieneBloque = (array) => {
   let resultado = false;
@@ -455,32 +567,25 @@ console.log(tieneBloque([1, 2, 3, 3, 3, 8]));
 console.log(tieneBloque([1, 2, 2, 3, 3, 4]));
 //false*/
 
-//10 Definí una función comer que reciba como argumento un string que consista en plantas, un conejo y una señal de prohibido. El conejo se come todas las plantas que hay a su derecha, hasta que se encuentra con la señal de prohibido. El programa debe mostrar las plantas sobrevivientes, que son todas las que están a la izquierda del conejo (si hay) y a la derecha de la señal (si hay). Ejemplo:
-
-// funciona si cambiamos a letras.
-/*const comer = (str) => {
+//12 Definí una función esPalindromo que tome una palabra y devuelva si dicha palabra es palíndroma, es decir, si puede leerse de igual manera de izquierda a derecha  que de derecha a izquierda .
+/*const esPalindromo = (str) => {
     
-  let posiciones = []
-  let arrayCortado = []
+  let  array = str.split("")
+ 
+  let nuevoStr = array.reverse().join("")
 
-  for (let i = 0; i < str.length; i++) {
-      if(str[i] === "C"){posiciones.push(i)
-      }
-      if(str[i] === "P"){posiciones.push(i)}
-  }
-
-  arrayCortado.push(str.slice(0,posiciones[0]))
-  arrayCortado.push(str.slice(posiciones[1]+1, str.length))
-
-
-  return arrayCortado.join("")
+    if(str === nuevoStr){
+        return true
+    }else{
+        return false
+    }
 }
-
-console.log(comer('CZZZP'))
-''
- comer('ZZCZZZP')
-'ZZ'
- comer('CZZZPZ') 
-'Z'
- comer('ZZZCZZZZPZ')
-'ZZZZ'*/
+*/
+ console.log(esPalindromo('ada'))
+//true
+ console.log(esPalindromo('reconocer'))
+//true
+ console.log(esPalindromo('mama'))
+//false
+ console.log(esPalindromo('javascript'))
+//false
