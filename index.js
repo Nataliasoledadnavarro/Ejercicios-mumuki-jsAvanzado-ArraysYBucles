@@ -1,3 +1,5 @@
+//////////////////////////EJERCICIOS ARRAY////////////////////
+
 //1 Definí una función obtenerMenor que tome por parámetro un array de números numeros y devuelva el menor de ellos. Ejemplo:
 
 /*const obtenerMenor = (numeros) => {
@@ -210,6 +212,48 @@ console.log(sonIguales([19, 25, 6, 33, 48, 105], [11, 25, 6, 33, 48, 105]));
 console.log(sonIguales([10, 25, 6, 33, 48, 105], [25, 10, 6, 33, 48, 105]));
 //false*/
 
+//Definí una función obtenerResultado que tome por parámetros dos strings jugadoraA y jugadoraB con los nombres de cada jugadora respectivamente, y dos arrays de numeros puntajesA y puntajesB de la misma longitud. La función debe devolver un string con el nombre de la ganadora o Empate en caso de que no haya ninguna. Para eso, debe comparar las mismas posiciones de cada array de puntajes, y sumar puntos a la jugadora correspondiente dependiendo de quien tenga el puntaje más alto. Por ejemplo:
+
+/*const puntajesA = [3, 5, 2]
+const puntajesB = [4, 6, 2]
+
+// puntajesA[0] vs. puntajesB[0] -> Gana B
+// puntajesA[1] vs. puntajesB[1] -> Gana B
+// puntajesA[2] vs. puntajesB[2] -> Empate
+
+// Resultado final: Gana Jugadora B*/
+
+/*const obtenerResultado = (jugadoraA, jugadoraB, puntajesA, puntajesB) => {
+  let acumuladorajugadorA = 0;
+  let acumuladoraJugadoraB = 0;
+  let empate = 0;
+
+  for (let i = 0; i < puntajesA.length; i++) {
+    if (puntajesA[i] > puntajesB[i]) {
+      acumuladorajugadorA++;
+    } else if (puntajesB[i] > puntajesA[i]) {
+      acumuladoraJugadoraB++;
+    } else if (puntajesA[i] === puntajesB[i]) {
+      empate++;
+    }
+  }
+
+  if (acumuladorajugadorA > acumuladoraJugadoraB) {
+    return jugadoraA;
+  } else if (acumuladorajugadorA < acumuladoraJugadoraB) {
+    return jugadoraB;
+  } else if (acumuladorajugadorA === acumuladoraJugadoraB) {
+    return "Empate";
+  }
+};
+
+console.log(obtenerResultado("Ada", "Grace", [4, 4, 4], [1, 2, 3]));
+//Ada
+console.log(obtenerResultado("Ada", "Grace", [3, 5, 5, 7], [4, 1, 2, 9]));
+//Empate
+console.log(obtenerResultado("Ada", "Grace", [5, 6, 3, 1, 8], [8, 2, 4, 2, 3]));
+//Grace*/
+
 ///////////////////////////////////// EJERCICIOS BUCLES////////////////////////////////////
 
 //1 Definí una función obtenerIndice que reciba como argumento un valor cualquiera valor y un array cualquiera array y ce del primer ítem con dicho valor en el array, o -1 si no hay ninguno.
@@ -420,9 +464,9 @@ console.log(tieneBloque([1, 2, 2, 3, 3, 4]));
   let arrayCortado = []
 
   for (let i = 0; i < str.length; i++) {
-      if(str[i] === "🐰"){posiciones.push(i)
+      if(str[i] === "C"){posiciones.push(i)
       }
-      if(str[i] === "🚫"){posiciones.push(i)}
+      if(str[i] === "P"){posiciones.push(i)}
   }
 
   arrayCortado.push(str.slice(0,posiciones[0]))
@@ -432,11 +476,11 @@ console.log(tieneBloque([1, 2, 2, 3, 3, 4]));
   return arrayCortado.join("")
 }
 
-console.log(comer('🐰🥕🥬🥕🚫'))
+console.log(comer('CZZZP'))
 ''
- comer('🥕🥬🐰🥕🥕🥕🚫')
-'🥕🥬'
- comer('🐰🥕🥬🥕🚫🥕') 
-'🥕'
- comer('🌱🥕🌱🐰🌱🥬🌱🌱🚫🌷')
-'🌱🥕🌱🌷'*/
+ comer('ZZCZZZP')
+'ZZ'
+ comer('CZZZPZ') 
+'Z'
+ comer('ZZZCZZZZPZ')
+'ZZZZ'*/
