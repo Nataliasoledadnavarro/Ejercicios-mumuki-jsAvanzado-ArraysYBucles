@@ -508,6 +508,38 @@ console.log(capitalizarPalabras('Esto es un título'))
  console.log(sumarSeccion([2, 2, 4, 3, 10, 20, 5], 4, 1))
 //10*/
 
+//9 Definí una función germinar que tome por parámetro un string de plantines con flores y plantines (🌱). El array debe comenzar con una flor. La función debe devolver un string con los plantines convertidos en flores. El plantín se debe convertir en la primera flor que encuentre a su izquierda. Ejemplo:
+// FUNCIONA SOLO CON LAS LETRAS!
+
+/*const germinar = (plantines) => {
+  let array = plantines.split(" ");
+
+  let arrayGerminado = [];
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] !== "HOJA") {
+      arrayGerminado.push(array[i]);
+    } else if (array[i] === "HOJA") {
+      arrayGerminado.push(arrayGerminado[arrayGerminado.length - 1]);
+    }
+  }
+
+  return arrayGerminado.join(" ");
+};
+
+console.log(
+  germinar("ROSA HOJA GIRASOL HOJA FLOR HOJA ROSA HOJA GIRASOL HOJA FLOR HOJA")
+);
+//'🌷🌷🌻🌻🌸🌸🌷🌷🌻🌻🌸🌸'
+console.log(
+  germinar("ROSA HOJA HOJA HOJA GIRASOL HOJA HOJA FLOR HOJA HOJA HOJA HOJA")
+);
+//'🌷🌷🌷🌷🌻🌻🌻🌸🌸🌸🌸🌸'
+console.log(
+  germinar("GIRASOL FLOR HOJA ROSA GIRASOL HOJA HOJA ROSA ROSA HOJA HOJA HOJA")
+);
+//'🌻🌸🌸🌷🌻🌻🌻🌷🌷🌷🌷🌷'*/
+
 //10 Definí una función esSubconjunto que tome por parámetro dos arrays, subconjunto y conjunto, y devuelva si subconjunto es realmente subconjunto de conjunto, es decir, si todos los valores de subconjunto están en conjunto.
 /*const esSubconjunto = (subconjunto, conjunto) => {
 
@@ -580,7 +612,7 @@ console.log(tieneBloque([1, 2, 2, 3, 3, 4]));
         return false
     }
 }
-*/
+
  console.log(esPalindromo('ada'))
 //true
  console.log(esPalindromo('reconocer'))
@@ -588,4 +620,4 @@ console.log(tieneBloque([1, 2, 2, 3, 3, 4]));
  console.log(esPalindromo('mama'))
 //false
  console.log(esPalindromo('javascript'))
-//false
+//false*/
