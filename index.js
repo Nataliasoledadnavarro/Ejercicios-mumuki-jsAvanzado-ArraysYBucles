@@ -315,6 +315,69 @@ console.log(obtenerResultado("Ada", "Grace", [3, 5, 5, 7], [4, 1, 2, 9]));
 console.log(obtenerResultado("Ada", "Grace", [5, 6, 3, 1, 8], [8, 2, 4, 2, 3]));
 //Grace*/
 
+//Definí una función jugarPiedraPapelTijeras que reciba como argumentos dos strings jugadoraA y jugadoraB con los nombres de cada jugadora respectivamente, y dos arrays de strings jugadasA y jugadasB con jugadas de Piedra, Papel o Tijera, de la misma longitud. La función debe devolver un string con el nombre de la ganadora o Empate en caso de que no haya ninguna. Para eso, debe comparar las mismas posiciones de cada array de jugadas, y sumar puntos a la jugadora correspondiente. Por ejemplo:
+
+/*const jugadasA = ['piedra', 'piedra', 'tijera']
+const jugadasB = ['papel', 'tijera', 'tijera']
+
+// jugadasA[0] vs. jugadasB[0] -> Gana B
+// jugadasA[1] vs. jugadasB[1] -> Gana A
+// jugadasA[2] vs. jugadasB[2] -> Empate
+
+// Resultado final: Empate*/
+
+const jugarPiedraPapelTijeras = (jugadoraA, juegadoraB, jugadasA, jugadasB) => {
+  let puntajeJugadoraA = 0;
+  let puntajeJugadoraB = 0;
+  let empate = 0;
+
+  for (let i = 0; i < jugadasA.length; i++) {
+    if (jugadasA[i] === "tijera" && jugadasB[i] === "piedra") {
+      puntajeJugadoraB++;
+    } else if (jugadasA[i] === "piedra" && jugadasB[i] === "tijera") {
+      puntajeJugadoraA++;
+    } else if (jugadasA[i] === "papel" && jugadasB[i] === "piedra") {
+      puntajeJugadoraA++;
+    } else if (jugadasA[i] === "piedra" && jugadasB[i] === "papel") {
+      puntajeJugadoraB++;
+    } else if (jugadasA[i] === "papel" && jugadasB[i] === "tijera") {
+      puntajeJugadoraB++;
+    } else if (jugadasA[i] === "tijera" && jugadasB[i] === "papel") {
+      puntajeJugadoraA++;
+    } else if (jugadasA[i] === "piedra" && jugadasB[i] === "piedra") {
+      empate++;
+    } else if (jugadasA[i] === "papel" && jugadasB[i] === "papel") {
+      empate++;
+    } else if (jugadasA[i] === "tijera" && jugadasB[i] === "tijera") {
+      empate++;
+    }
+  }
+
+  if (puntajeJugadoraA > puntajeJugadoraB) {
+    return jugadoraA;
+  } else if (puntajeJugadoraA < puntajeJugadoraB) {
+    return juegadoraB;
+  } else if (puntajeJugadoraA === puntajeJugadoraB) {
+    return "Empate";
+  }
+};
+
+console.log(jugarPiedraPapelTijeras("Ada", "Grace", ["tijera"], ["piedra"]));
+//Grace
+
+console.log(jugarPiedraPapelTijeras("Ada", "Grace", ["papel"], ["papel"]));
+// Empate
+
+console.log(
+  jugarPiedraPapelTijeras(
+    "Ada",
+    "Grace",
+    ["piedra", "papel", "papel", "piedra", "tijera"],
+    ["papel", "piedra", "tijera", "tijera", "papel"]
+  )
+);
+//Ada
+
 ///////////////////////////////////// EJERCICIOS BUCLES////////////////////////////////////
 
 //1 Definí una función obtenerIndice que reciba como argumento un valor cualquiera valor y un array cualquiera array y ce del primer ítem con dicho valor en el array, o -1 si no hay ninguno.
@@ -530,15 +593,15 @@ console.log(capitalizarPalabras('Esto es un título'))
 console.log(
   germinar("ROSA HOJA GIRASOL HOJA FLOR HOJA ROSA HOJA GIRASOL HOJA FLOR HOJA")
 );
-//'🌷🌷🌻🌻🌸🌸🌷🌷🌻🌻🌸🌸'
+
 console.log(
   germinar("ROSA HOJA HOJA HOJA GIRASOL HOJA HOJA FLOR HOJA HOJA HOJA HOJA")
 );
-//'🌷🌷🌷🌷🌻🌻🌻🌸🌸🌸🌸🌸'
+
 console.log(
   germinar("GIRASOL FLOR HOJA ROSA GIRASOL HOJA HOJA ROSA ROSA HOJA HOJA HOJA")
 );
-//'🌻🌸🌸🌷🌻🌻🌻🌷🌷🌷🌷🌷'*/
+
 
 //10 Definí una función esSubconjunto que tome por parámetro dos arrays, subconjunto y conjunto, y devuelva si subconjunto es realmente subconjunto de conjunto, es decir, si todos los valores de subconjunto están en conjunto.
 /*const esSubconjunto = (subconjunto, conjunto) => {
