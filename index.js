@@ -326,7 +326,7 @@ const jugadasB = ['papel', 'tijera', 'tijera']
 
 // Resultado final: Empate*/
 
-const jugarPiedraPapelTijeras = (jugadoraA, juegadoraB, jugadasA, jugadasB) => {
+/*const jugarPiedraPapelTijeras = (jugadoraA, juegadoraB, jugadasA, jugadasB) => {
   let puntajeJugadoraA = 0;
   let puntajeJugadoraB = 0;
   let empate = 0;
@@ -376,7 +376,7 @@ console.log(
     ["papel", "piedra", "tijera", "tijera", "papel"]
   )
 );
-//Ada
+//Ada*/
 
 ///////////////////////////////////// EJERCICIOS BUCLES////////////////////////////////////
 
@@ -550,6 +550,29 @@ console.log(capitalizarPalabras('Esto es un título'))
  console.log(capitalizarPalabras('OMG'))
 //'OMG'
 */
+//OTRA SOCLUCION
+/*const capitalizarPalabras = (str) => {
+  const vacio = " ";
+  let arrayCapitalizado = [];
+
+  for (let i = 0; i < str.length; i++) {
+    if (i === 0) {
+      arrayCapitalizado.push(str[0].toUpperCase());
+    } else if (str[i - 1] === vacio) {
+      arrayCapitalizado.push(str[i].toUpperCase());
+    } else {
+      arrayCapitalizado.push(str[i]);
+    }
+  }
+
+  return arrayCapitalizado.join("");
+};
+console.log(capitalizarPalabras("Esto es un título"));
+//'Esto Es Un Título'
+console.log(capitalizarPalabras("había una vez"));
+//'Había Una Vez'
+console.log(capitalizarPalabras("OMG"));
+//'OMG'*/
 
 //9 Definí una función sumarSeccion que reciba como argumento un array de números enteros array, un número entero comienzo y un número entero cantidad, y que devuelva la suma de cantidad de números de array empezando a contar desde el ítem con índice comienzo.
 /*const sumarSeccion = (array, comienzo, cantidad)=> {
